@@ -1,5 +1,5 @@
-import { Pantalla1 } from './components/Pantalla1';
+import { Pantalla_login } from './components/Pantalla_login';
 
 export default function App() {
-  return <Pantalla1 />
+  return <Pantalla_login />
 }
