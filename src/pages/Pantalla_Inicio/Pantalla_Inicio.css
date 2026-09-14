@@ -1,0 +1,15 @@
+.frame_bt_inicio {
+  grid-row: 4 / 8;
+  grid-column: 6 / 8;
+  display: flex;
+  flex-direction: column;
+}
+
+.botones_inicio {
+  flex-grow: 1; 
+  margin: 10px 0px
+}
+
+.pantalla_inicio {
+  background-color: #E2E8F0;
+}
