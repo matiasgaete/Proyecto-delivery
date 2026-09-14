@@ -30,8 +30,19 @@
 .etiquetas_locales {
   flex-grow: 1;
   margin: 15px 40px;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
   align-items: center;
   background-color:#FFFFFF  
+}
+
+.etiquetas_internas_1 {
+  margin: 0px 10px;
+  font-weight: 600;
+  font-size: 20px
+}
+
+.etiquetas_internas_2 {
+  font-size: 14px;
+  font-weight: 500;
 }
