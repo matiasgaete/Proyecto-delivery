@@ -1,6 +1,7 @@
 import './Pantalla_Rentabilidad.css'
 
-export function Pantalla_Rentabilidad({ cerrarSesion }: { cerrarSesion: (nombre: string) => void}) {
+export function Pantalla_Rentabilidad({ cerrarSesion, entrega }: { cerrarSesion: (nombre: string) => void;
+    entrega: (nombre: string) => void;}) {
     return (
         <div className="grilla">
             <header className="header-rentabilidad">
@@ -9,7 +10,7 @@ export function Pantalla_Rentabilidad({ cerrarSesion }: { cerrarSesion: (nombre:
             <div className = "menu_lateral">
                 <button className="botones">Rentabiliad</button>
                 <button className="botones">Agregar Reporte</button>
-                <button className="botones">Agregar Entrega</button>
+                <button onClick={() => entrega('AgregarEntrega')} className="botones">Agregar Entrega</button>
                 <button className="botones">Cuenta</button>
                 <button className="botones">Configuracion</button>
                 <button onClick={() => cerrarSesion('Inicio')} className="botones">Cerrar Sesion</button>
