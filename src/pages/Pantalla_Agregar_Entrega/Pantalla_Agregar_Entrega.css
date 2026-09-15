@@ -16,66 +16,50 @@
   grid-column: span 9;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 22px 24px;
+  gap: 15px;
+  padding: 15px 40px;
   background-color: #E2E8F0;
   overflow-y: auto;
 }
 
 .fila-dato {
-  background-color: #F8FAFC;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 22px;
-  gap: 18px;
-  border-radius: 4px;
+  padding: 14px 20px;
+  background-color: #FFFFFF;
 }
 
 .etiqueta-campo {
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: #1E293B;
-  white-space: nowrap;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .valor-campo {
   flex: 0 1 480px;
 }
 
-.fila-dato input[type="time"],
-.fila-dato input[type="number"],
-.fila-dato input[type="text"] {
+.fila-dato input {
   width: 100%;
-  background-color: #FFFFFF;
   border: 1px solid #94A3B8;
   border-radius: 2px;
   padding: 6px 10px;
-  font-size: 0.95rem;
-  color: #1E293B;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.fila-dato input:focus {
-  outline: 2px solid #1E293B;
-  outline-offset: 1px;
-}
-
-/* ---- Lista vertical de apps ---- */
 .lista-apps {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  background-color: #FFFFFF;
-  border: 1px solid #94A3B8;
-  border-radius: 2px;
-  padding: 8px 12px;
 }
 
 .opcion-app {
   display: flex;
   align-items: center;
   gap: 10px;
-  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .opcion-app input[type="radio"] {
@@ -84,84 +68,13 @@
   height: 15px;
 }
 
-.opcion-app div {
-  font-weight: 400;
-  font-size: 0.95rem;
-  color: #1E293B;
-  cursor: pointer;
-}
-
-/* ---- Fila del botón "Agregar" ---- */
-.fila-boton {
-  display: flex;
-}
-
 .fila-boton .botones {
   width: 100%;
   padding: 12px;
-  font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  border-radius: 4px;
 }
 
-/* ---- Botón activo en el menú lateral ---- */
 .botones.activo {
   font-weight: 700;
-}
-
-/* ---- Modal para pantallas aún no construidas ---- */
-.fondo-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(30, 41, 59, 0.55);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 50;
-}
-
-.caja-modal {
-  background: #E2E8F0;
-  border: 1px solid #94A3B8;
-  border-radius: 6px;
-  padding: 28px 32px;
-  max-width: 420px;
-  width: 90%;
-  text-align: center;
-  color: #1E293B;
-}
-
-.caja-modal h3 {
-  margin-top: 0;
-  font-size: 1.2rem;
-  color: #1E293B;
-}
-
-.caja-modal p {
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-.caja-modal .botones {
-  margin-top: 16px;
-  padding: 10px 24px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  border-radius: 2px;
-}
-
-@media (max-width: 720px) {
-  .menu_lateral,
-  .frame-formulario {
-    grid-column: span 12;
-  }
-  .fila-dato {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .valor-campo {
-    flex: 1 1 auto;
-    width: 100%;
-  }
 }

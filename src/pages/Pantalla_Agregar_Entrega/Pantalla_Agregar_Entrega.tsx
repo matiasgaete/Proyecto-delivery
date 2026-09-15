@@ -1,6 +1,5 @@
 import './Pantalla_Agregar_Entrega.css'
 
-
 export function Pantalla_Agregar_Entrega({ cerrarSesion, rentabilidad }: { cerrarSesion: (nombre: string) => void;
     rentabilidad: (nombre: string) => void; }) {
 
@@ -20,7 +19,6 @@ export function Pantalla_Agregar_Entrega({ cerrarSesion, rentabilidad }: { cerra
             </div>
 
             <div className="frame-formulario">
-
                 <div className="fila-dato">
                     <div className="etiqueta-campo">Hora de Aceptacion</div>
                     <div className="valor-campo">
