@@ -9,7 +9,7 @@ export default function App() {
     <div className="contenedor-principal">
       {sigPantalla === 'Inicio' && <Pantalla_Inicio ingresar = {cambiarPantalla}/>}
       {sigPantalla === 'Rentabilidad' && <Pantalla_Rentabilidad cerrarSesion = {cambiarPantalla} entrega={cambiarPantalla}/>}
-      {sigPantalla === 'AgregarEntrega' && <Pantalla_Agregar_Entrega/>}
+      {sigPantalla === 'AgregarEntrega' && <Pantalla_Agregar_Entrega cerrarSesion = {cambiarPantalla} rentabilidad={cambiarPantalla}/>}
     </div>
   )
 }

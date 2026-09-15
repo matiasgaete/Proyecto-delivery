@@ -1,34 +1,86 @@
 import './Pantalla_Agregar_Entrega.css'
 
-export function Pantalla_Agregar_Entrega() {
-  return (
-<div className="grilla pantalla-agregar-entrega">
-      {/* Título */}
-      <header className="titulo">AGREGAR ENTREGA</header>
 
-      {/* Barra lateral: 3 columnas */}
-      <nav className="barra-lateral">
-        <a className="botones" href="rentabilidad.html">Rentabilidad</a>
-        <button className="botones" type="button">Agregar Reporte</button>
-        <a className="botones activo" href="agregar_entrega.html">Agregar Entrega</a>
-        <button className="botones" type="button">Cuenta</button>
-        <button className="botones" type="button">Configuracion</button>
-        <a className="botones" href="login.html">Cerrar Sesion</a>
-      </nav>
+export function Pantalla_Agregar_Entrega({ cerrarSesion, rentabilidad }: { cerrarSesion: (nombre: string) => void;
+    rentabilidad: (nombre: string) => void; }) {
 
-      {/* Contenido: 9 columnas */}
-      <section className="contenido">
-        <form className="form-datos" onSubmit={(e) => e.preventDefault()}>
-          <div className="fila">
-            <label htmlFor="hora-aceptacion">Hora de Aceptacion</label>
-            <div className="campo-valor">
-              <input type="time" id="hora-aceptacion" name="hora-aceptacion" />
+    return (
+        <div className="grilla">
+            <header className="header-agregar-entrega">
+                <p>AGREGAR ENTREGA</p>
+            </header>
+
+            <div className="menu_lateral">
+                <button onClick={() => rentabilidad('Rentabilidad')} className="botones">Rentabiliad</button>
+                <button className="botones">Agregar Reporte</button>
+                <button className="botones activo">Agregar Entrega</button>
+                <button className="botones">Cuenta</button>
+                <button className="botones">Configuracion</button>
+                <button onClick={() => cerrarSesion('Inicio')} className="botones">Cerrar Sesion</button>
             </div>
-          </div>
-          
-          {/* Agrega aquí el resto de las filas de tu formulario original */}
-        </form>
-      </section>
-    </div>
-  )
+
+            <div className="frame-formulario">
+
+                <div className="fila-dato">
+                    <div className="etiqueta-campo">Hora de Aceptacion</div>
+                    <div className="valor-campo">
+                        <input type="time" name="hora-aceptacion" />
+                    </div>
+                </div>
+
+                <div className="fila-dato">
+                    <div className="etiqueta-campo">Hora de Recogida</div>
+                    <div className="valor-campo">
+                        <input type="time" name="hora-recogida" />
+                    </div>
+                </div>
+
+                <div className="fila-dato">
+                    <div className="etiqueta-campo">Hora de Entrega</div>
+                    <div className="valor-campo">
+                        <input type="time" name="hora-entrega" />
+                    </div>
+                </div>
+
+                <div className="fila-dato">
+                    <div className="etiqueta-campo">Monto</div>
+                    <div className="valor-campo">
+                        <input type="number" name="monto" placeholder="$ 0" min={0} step={1} />
+                    </div>
+                </div>
+
+                <div className="fila-dato">
+                    <div className="etiqueta-campo">Local</div>
+                    <div className="valor-campo">
+                        <input type="text" name="local" placeholder="Nombre del local" />
+                    </div>
+                </div>
+
+                <div className="fila-dato">
+                    <div className="etiqueta-campo">App</div>
+                    <div className="valor-campo">
+                        <div className="lista-apps">
+                            <div className="opcion-app">
+                                <input type="radio" id="app-rappi" name="app" value="Rappi" />
+                                <div>Rappi</div>
+                            </div>
+                            <div className="opcion-app">
+                                <input type="radio" id="app-ubereats" name="app" value="Uber Eats" />
+                                <div>Uber Eats</div>
+                            </div>
+                            <div className="opcion-app">
+                                <input type="radio" id="app-pedidosya" name="app" value="Pedidos Ya" />
+                                <div>Pedidos Ya</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="fila-boton">
+                    <button className="botones" onClick={() => rentabilidad('Rentabilidad')}>Agregar</button>
+                </div>
+
+            </div>
+        </div>
+    )
 }
