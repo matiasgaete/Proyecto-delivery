@@ -1,0 +1,203 @@
+.pantalla-agregar-entrega{
+  --borde-input: #94A3B8;
+  --fondo-contenido: #E2E8F0;
+  --fondo-fila: #F8FAFC;
+  --texto-oscuro: #1E293B;
+}
+
+/* ---- Título: fila 1 de la grilla, ancho completo ---- */
+.pantalla-agregar-entrega .titulo{
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  background: #FFFFFF;
+  text-align: center;
+  padding: 26px 16px;
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--texto-oscuro);
+}
+
+/* ---- Barra lateral: 3 columnas, resto de las filas ---- */
+.pantalla-agregar-entrega .barra-lateral{
+  grid-column: 1 / 4;
+  grid-row: 2 / -1;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 8px;
+}
+
+/* Los botones/enlaces de navegación usan la clase global .botones;
+   aquí solo se agrega lo que un <a> no trae por defecto. */
+.pantalla-agregar-entrega .barra-lateral .botones{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.pantalla-agregar-entrega .barra-lateral .botones.activo{
+  font-weight: 700;
+}
+
+/* ---- Contenido principal: 9 columnas, resto de las filas ---- */
+.pantalla-agregar-entrega .contenido{
+  grid-column: 4 / -1;
+  grid-row: 2 / -1;
+  background: var(--fondo-contenido);
+  padding: 22px 24px;
+  overflow-y: auto;
+}
+
+.pantalla-agregar-entrega .form-datos{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pantalla-agregar-entrega .fila{
+  background: var(--fondo-fila);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  gap: 18px;
+  border-radius: 4px;
+}
+
+.pantalla-agregar-entrega .fila label{
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--texto-oscuro);
+  white-space: nowrap;
+}
+
+.pantalla-agregar-entrega .fila .campo-valor{
+  flex: 0 1 480px;
+}
+
+.pantalla-agregar-entrega .fila input[type="time"],
+.pantalla-agregar-entrega .fila input[type="number"],
+.pantalla-agregar-entrega .fila input[type="text"]{
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid var(--borde-input);
+  border-radius: 2px;
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  color: var(--texto-oscuro);
+}
+
+.pantalla-agregar-entrega .fila input:focus{
+  outline: 2px solid #1E293B;
+  outline-offset: 1px;
+}
+
+/* ---- Lista vertical de apps ---- */
+.pantalla-agregar-entrega .lista-apps{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #FFFFFF;
+  border: 1px solid var(--borde-input);
+  border-radius: 2px;
+  padding: 8px 12px;
+}
+
+.pantalla-agregar-entrega .lista-apps .opcion-app{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.pantalla-agregar-entrega .lista-apps input[type="radio"]{
+  accent-color: #1E293B;
+  width: 15px;
+  height: 15px;
+}
+
+.pantalla-agregar-entrega .lista-apps label{
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--texto-oscuro);
+  cursor: pointer;
+}
+
+/* ---- Fila del botón "Agregar" ---- */
+.pantalla-agregar-entrega .fila-boton{
+  display: flex;
+}
+
+.pantalla-agregar-entrega .fila-boton .botones{
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* ---- Modal para pantallas aún no construidas ---- */
+.fondo-modal{
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 41, 59, 0.55);
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.fondo-modal.visible{
+  display: flex;
+}
+
+.caja-modal{
+  background: #E2E8F0;
+  border: 1px solid #94A3B8;
+  border-radius: 6px;
+  padding: 28px 32px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  color: #1E293B;
+}
+
+.caja-modal h3{
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #1E293B;
+}
+
+.caja-modal p{
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.caja-modal .botones{
+  margin-top: 16px;
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+@media (max-width: 720px){
+  .pantalla-agregar-entrega .barra-lateral,
+  .pantalla-agregar-entrega .contenido{
+    grid-column: 1 / -1;
+  }
+  .pantalla-agregar-entrega .fila{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .pantalla-agregar-entrega .fila .campo-valor{
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
